@@ -13,12 +13,11 @@ public class RockPaperScissor {
     static int totalUserDraw = 0;
     static int totalUserLost = 0;
 
-    Scanner sc = new Scanner(System.in);
+    public static Scanner sc = new Scanner(System.in);
     //main method that will call the other methods for their functions
 
-    public static void main(String[] args) {
+    public void startGame() {
         //creating Scanner and RockPaperScissor objects.
-        Scanner sc = new Scanner(System.in);
         //will keep replaying game till user says no
         int rounds;
 

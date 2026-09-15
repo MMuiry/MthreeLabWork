@@ -9,7 +9,8 @@ public class InterestCalculator {
     public double interestRate;
 
 
-    public static void main(String[] args) {
+    public void launchApplication()
+    {
         InterestCalculator ic = new InterestCalculator();
         System.out.print("Welcome to the interest calculator");
         ic.questions();

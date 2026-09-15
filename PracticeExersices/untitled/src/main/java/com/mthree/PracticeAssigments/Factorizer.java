@@ -9,7 +9,8 @@ public class Factorizer {
     public int userNumber;
     public List<Integer> factors = new ArrayList<>();
     
-    public static void main(String[] args) {
+    public void launchApplication()
+    {
         Factorizer f = new Factorizer();
         f.inputFromUser();
         f.calculateFactors();
