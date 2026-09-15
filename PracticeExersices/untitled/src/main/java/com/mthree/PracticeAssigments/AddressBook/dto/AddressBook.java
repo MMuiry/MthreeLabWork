@@ -1,5 +1,7 @@
 package com.mthree.PracticeAssigments.AddressBook.dto;
 
+import java.util.Objects;
+
 public class AddressBook {
     private String fullName;
     private String numberAndStreet;
@@ -42,4 +44,15 @@ public class AddressBook {
         this.zipCode = zipCode;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        AddressBook that = (AddressBook) o;
+        return Objects.equals(fullName, that.fullName) && Objects.equals(numberAndStreet, that.numberAndStreet) && Objects.equals(city, that.city) && Objects.equals(state, that.state) && Objects.equals(zipCode, that.zipCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, numberAndStreet, city, state, zipCode);
+    }
 }

@@ -1,5 +1,7 @@
 package com.mthree.PracticeAssigments.ClassRoster.dto;
 
+import java.util.Objects;
+
 //This is the DTO that holds all the Student info.
 public class Student {
     private String firstName;
@@ -38,5 +40,27 @@ public class Student {
 
     public void setCohort(String cohort) {
         this.cohort = cohort;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName) && Objects.equals(studentId, student.studentId) && Objects.equals(cohort, student.cohort);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, studentId, cohort);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", studentId='" + studentId + '\'' +
+                ", cohort='" + cohort + '\'' +
+                '}';
     }
 }

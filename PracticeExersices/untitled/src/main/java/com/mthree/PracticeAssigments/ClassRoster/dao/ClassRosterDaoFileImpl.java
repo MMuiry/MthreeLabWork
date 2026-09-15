@@ -8,8 +8,16 @@ import java.util.*;
 //This is the text file-specific implementation of the ClassRosterDao interface.
 public class ClassRosterDaoFileImpl implements ClassRosterDao {
     private Map<String, Student> students = new HashMap<>();
-    public static final String ROSTER_FILE = "roster.txt";
+    private final String ROSTER_FILE;
     public static final String DELIMITER = "::";
+
+    public ClassRosterDaoFileImpl(){
+        ROSTER_FILE = "roster.txt";
+    }
+
+    public ClassRosterDaoFileImpl(String rosterTextFile){
+        ROSTER_FILE = rosterTextFile;
+    }
 
     private Student unmarshallStudent(String studentAsText){
         String[] studentToken = studentAsText.split(DELIMITER);
@@ -96,4 +104,6 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
         writeRoster();
         return removedStudent;
     }
+
+
 }
