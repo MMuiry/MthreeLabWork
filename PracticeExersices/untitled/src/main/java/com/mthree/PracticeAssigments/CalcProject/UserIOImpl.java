@@ -10,8 +10,8 @@ public class UserIOImpl implements UserIO {
 
     public String readString(String prompt) {
         System.out.print(prompt);
-        sc.nextLine();
-        return sc.nextLine();
+        String usrResponse = sc.nextLine();
+        return usrResponse;
     }
 
     public int readInt(String prompt) {
@@ -26,6 +26,7 @@ public class UserIOImpl implements UserIO {
             }
             validated = true;
             userInput = sc.nextInt();
+            sc.nextLine();
         }
         return userInput;
     }
@@ -41,6 +42,7 @@ public class UserIOImpl implements UserIO {
                 continue;
             }
             userNum = sc.nextInt();
+            sc.nextLine();
             if (userNum < min || userNum > max) {
                 print("Out of Range: Please enter an integer with the range " + min + "-" + max);
                 continue;

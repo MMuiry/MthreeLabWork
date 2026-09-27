@@ -1,5 +1,6 @@
 package com.mthree.PracticeAssigments.CalcProject;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class App {
@@ -7,8 +8,8 @@ public class App {
     private static boolean endProgram = false;
     public static App app = new App();
     public static int option;
-    public static int num1;
-    public static int num2;
+    public static BigDecimal num1;
+    public static BigDecimal num2;
     private SimpleCalculator calc =  new SimpleCalculator();
     private static UserIO  iO = new UserIOImpl();
     private static String output;
@@ -22,14 +23,10 @@ public class App {
             if (option == 5) {
                 continue;
             }
-            num1 = iO.readInt("Enter the first number: ");
-            num2 = iO.readInt("Enter the second number: ");
-            System.out.println(num1);
-            //System.out.print("Enter first number: ");
-            //num1 = validateNumInput();
-            //System.out.print("Enter second number: ");
-            //num2 = validateNumInput();
-            double result = app.performCalc();
+            num1 = new BigDecimal(iO.readString("Enter the first number: "));
+            num2 = new BigDecimal(iO.readString("Enter the second number: "));
+
+            BigDecimal result = app.performCalc();
             //System.out.println("The result is: " + result);
             //output = "The result is: " + result)
             iO.print("The result is: " + result);
@@ -37,8 +34,8 @@ public class App {
         System.out.println("Thank you for using the app, Good bye!");
     }
 
-    private double performCalc() {
-        double result = 0;
+    private BigDecimal performCalc() {
+        BigDecimal result = null;
         if (option == 1) {
             result = calc.addition(num1,num2);
         } else if (option == 2) {

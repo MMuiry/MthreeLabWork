@@ -1,21 +1,24 @@
 package com.mthree.PracticeAssigments.CalcProject;
 
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class SimpleCalculator {
 
-    public static int addition(int num1,int num2) {
-        return num1 + num2;
+    public static BigDecimal addition(BigDecimal num1, BigDecimal num2) {
+        return num1.add(num2).setScale(2, RoundingMode.HALF_UP);
     }
 
-    public static int subtraction(int num1,int num2) {
-        return num1 - num2;
+    public static BigDecimal subtraction(BigDecimal num1,BigDecimal num2) {
+        return num1.subtract(num2).setScale(2, RoundingMode.HALF_UP);
     }
 
-    public static int multiplication(int num1,int num2) {
-        return num1 * num2;
+    public static BigDecimal multiplication(BigDecimal num1,BigDecimal num2) {
+        return num1.multiply(num2).setScale(2, RoundingMode.HALF_UP);
     }
 
-    public static double division(int num1,int num2) {
-        return (double) num1 / num2;
+    public static BigDecimal division(BigDecimal num1,BigDecimal num2) {
+        return num1.divide(num2, 2, RoundingMode.HALF_UP);
     }
 }
