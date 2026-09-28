@@ -136,7 +136,7 @@ public class SchoolDaoImpl implements SchoolDao {
         // YOUR CODE STARTS HERE
 
         String sql = "DELETE FROM teacher\n" +
-                "WHERE tid = (SELECT tid FROM teacher WHERE tfName = 'David' AND tlName = 'Mitchell') ";
+                "WHERE tid = (SELECT tid FROM teacher WHERE tfName = 'David' AND tlName = 'Mitchell' ) ";
 
         // YOUR CODE ENDS HERE
         jdbcTemplate.update(sql);
